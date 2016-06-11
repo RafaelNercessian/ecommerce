@@ -31,16 +31,18 @@
                     <th>Category</th>
                     <th>Condition</th>
                     <th>Price</th>
+                    <th></th>
                 </tr>
             </thead>
                 <c:forEach var="product" items="${products}">
-                <tr>
-                    <td><img src="#" alt="image"></td>
-                    <td>${product.productName}</td>
-                    <td>${product.productCategory}</td>
-                    <td>${product.productCondition}</td>
-                    <td>${product.productPrice}</td>
-                </tr>
+                    <tr>
+                            <td><img src="#" alt="image"></td>
+                            <td>${product.productName}</td>
+                            <td>${product.productCategory}</td>
+                            <td>${product.productCondition}</td>
+                            <td>${product.productPrice}</td>
+                            <td><a href="${s:mvcUrl('HC#viewProduct').arg(0,product.productId).build()}"><span class="glyphicon glyphicon-info-sign"/></a></td>
+                    </tr>
                 </c:forEach>
         </table>
 <%@include file="/WEB-INF/views/template/footer.jsp"%>

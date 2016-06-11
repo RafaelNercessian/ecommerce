@@ -13,9 +13,11 @@ import java.util.List;
 public class ProductDao {
 
     private List<Product> productList=new ArrayList<Product>();
+    private Product returnedProduct;
 
     public List<Product> getProductList(){
         Product product1=new Product();
+        product1.setProductId("1");
         product1.setProductName("Guitar1");
         product1.setProductCategory("Instrument");
         product1.setProductDescription("Fender strat guitar");
@@ -27,6 +29,7 @@ public class ProductDao {
         productList.add(product1);
 
         Product product2=new Product();
+        product2.setProductId("2");
         product2.setProductName("Record1");
         product2.setProductCategory("Record");
         product2.setProductDescription("Awesome mix");
@@ -38,6 +41,7 @@ public class ProductDao {
         productList.add(product2);
 
         Product product3=new Product();
+        product3.setProductId("3");
         product3.setProductName("Speaker");
         product3.setProductCategory("Speaker");
         product3.setProductDescription("Shelf speaker");
@@ -48,5 +52,16 @@ public class ProductDao {
         product3.setProductManufacturer("EMI");
         productList.add(product3);
         return productList;
+    }
+
+    public Product productId(String productId){
+        for (Product product:productList
+             ) {
+            if(product.getProductId().equals(productId)){
+                returnedProduct=product;
+                break;
+            }
+        }
+        return returnedProduct;
     }
 }
