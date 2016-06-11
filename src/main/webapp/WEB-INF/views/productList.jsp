@@ -40,7 +40,7 @@
                             <td>${product.productName}</td>
                             <td>${product.productCategory}</td>
                             <td>${product.productCondition}</td>
-                            <td>${product.productPrice}</td>
+                            <td>${product.productPrice} USD</td>
                             <td><a href="${s:mvcUrl('HC#viewProduct').arg(0,product.productId).build()}"><span class="glyphicon glyphicon-info-sign"/></a></td>
                     </tr>
                 </c:forEach>

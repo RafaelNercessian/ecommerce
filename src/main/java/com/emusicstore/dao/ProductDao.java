@@ -3,6 +3,7 @@ package com.emusicstore.dao;
 import com.emusicstore.model.Product;
 import org.springframework.stereotype.Component;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,7 +14,6 @@ import java.util.List;
 public class ProductDao {
 
     private List<Product> productList=new ArrayList<Product>();
-    private Product returnedProduct;
 
     public List<Product> getProductList(){
         Product product1=new Product();
@@ -54,14 +54,13 @@ public class ProductDao {
         return productList;
     }
 
-    public Product productId(String productId){
+    public Product getProductById(String productId) throws  IOException{
         for (Product product:productList
              ) {
             if(product.getProductId().equals(productId)){
-                returnedProduct=product;
-                break;
+               return product;
             }
         }
-        return returnedProduct;
+        throw new IOException("No product found");
     }
 }

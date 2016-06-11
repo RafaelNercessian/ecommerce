@@ -33,6 +33,7 @@
                     <p>Manufacturer: ${product.productManufacturer}</p>
                     <p>Category: ${product.productCategory}</p>
                     <p>Condition: ${product.productCondition}</p>
+                    <p>Price: ${product.productPrice} USD</p>
                 </div>
 
             </div>

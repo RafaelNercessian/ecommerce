@@ -87,3 +87,4 @@ public class Product {
         this.productManufacturer = productManufacturer;
     }
 }
+
