@@ -23,7 +23,7 @@
         </div>
 
         <div class="container">
-            <form:form action="#" method="POST" commandName="product">
+            <form:form action="${s:mvcUrl('HC#addProductPost').build()}" method="POST" commandName="product">
                 <div class="form-group">
                     <label for="name">Name</label>
                     <form:input path="productName" id="name" class="form-control"/>
@@ -32,9 +32,9 @@
 
                 <div class="form-group">
                     <label for="category">Category</label>
-                    <label class="checkbox-inline"><form:radiobutton path="productCategory" id="category" value="Instrument"/>Instrument</label>
-                    <label class="checkbox-inline"><form:radiobutton path="productCategory" id="category" value="Record"/>Record</label>
-                    <label class="checkbox-inline"><form:radiobutton path="productCategory" id="category" value="Accessory"/>Accessory</label>
+                    <label class="checkbox-inline"><form:radiobutton path="productCategory" id="category" value="instrument"/>Instrument</label>
+                    <label class="checkbox-inline"><form:radiobutton path="productCategory" id="category" value="record"/>Record</label>
+                    <label class="checkbox-inline"><form:radiobutton path="productCategory" id="category" value="accessory"/>Accessory</label>
                 </div>
 
                 <div class="form-group">
@@ -55,8 +55,8 @@
 
                 <div class="form-group">
                     <label for="status">Status</label>
-                    <label class="checkbox-inline"><form:radiobutton path="productStatus" id="condition" value="Active"/>Active</label>
-                    <label class="checkbox-inline"><form:radiobutton path="productStatus" id="condition" value="Inactive"/>Inactive</label>
+                    <label class="checkbox-inline"><form:radiobutton path="productStatus" id="status" value="Active"/>Active</label>
+                    <label class="checkbox-inline"><form:radiobutton path="productStatus" id="status" value="Inactive"/>Inactive</label>
                 </div>
 
                 <div class="form-group">
@@ -68,6 +68,8 @@
                     <label for="manufacturer">Manufacturer</label>
                     <form:input path="productManufacturer" id="manufacturer" class="form-control"/>
                 </div>
+                <input type="submit" value="Submit" class="btn btn-default"/>
+                <a href="/admin/productInventory" class="btn btn-default">Cancel</a>
 
             </form:form>
 

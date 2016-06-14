@@ -9,7 +9,7 @@ import java.util.List;
  */
 public interface ProductDao {
     void addProduct(Product product);
-    Product getProductById(String id);
+    Product getProductById(Integer id);
     List<Product> getAllProducts();
-    void deleteProduct(String id);
+    void deleteProduct(Integer id);
 }
