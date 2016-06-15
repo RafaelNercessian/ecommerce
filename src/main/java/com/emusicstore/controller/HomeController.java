@@ -14,6 +14,7 @@ import org.springframework.web.multipart.MultipartFile;
 import javax.servlet.http.HttpServletRequest;
 import java.io.File;
 import java.io.IOException;
+import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.List;
@@ -93,8 +94,22 @@ public class HomeController {
     }
 
     @RequestMapping("/admin/productInventory/deleteProduct/{productId}")
-    public String deleteProduct(@PathVariable Integer productId,Model model){
+    public String deleteProduct(@PathVariable Integer productId,Model model, HttpServletRequest request){
+
+
+        String rootDirectory=request.getSession().getServletContext().getRealPath("/");
+        path= Paths.get(rootDirectory+"\\WEB-INF\\resources\\images\\"+productId+".png");
+
+        if(Files.exists(path)){
+            try{
+                Files.delete(path);
+            }catch(IOException e) {
+                e.printStackTrace();
+            }
+        }
+
         productDao.deleteProduct(productId);
+
         return "productInventory";
     }
 }
