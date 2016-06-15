@@ -43,6 +43,8 @@
                     <td>${product.productPrice} USD</td>
                     <td><a href="${s:mvcUrl('HC#viewProduct').arg(0,product.productId).build()}"><span
                             class="glyphicon glyphicon-info-sign"/></a></td>
+                    <td><a href="${s:mvcUrl('HC#deleteProduct').arg(0,product.productId).build()}">
+                        <span class="glyphicon glyphicon-remove"></span></a></td>
                 </tr>
             </c:forEach>
         </table>
