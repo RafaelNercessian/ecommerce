@@ -46,6 +46,8 @@
                             class="glyphicon glyphicon-info-sign"/></a></td>
                     <td><a href="${s:mvcUrl('HC#deleteProduct').arg(0,product.productId).build()}">
                         <span class="glyphicon glyphicon-remove"></span></a></td>
+                    <td><a href="${s:mvcUrl('HC#editProduct').arg(0,product.productId).build()}">
+                        <span class="glyphicon glyphicon-pencil"></span></a></td>
                 </tr>
             </c:forEach>
         </table>
