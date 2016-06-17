@@ -11,9 +11,9 @@
     </c:if>
 
     <h2 style="margin-top:90px">Login with username and password!</h2>
-    <form name="loginForm" action="<c:url value="j_spring_security_check"/>" method="post">
+    <form name="loginForm" action="<c:url value="/j_spring_security_check"/>" method="post">
         <c:if test="${not empty error}">
-            <div class="error">${error}</div>
+            <div class="error" style="color: red;font-weight: bold">${error}</div>
         </c:if>
         <div class="form-group">
             <label for="username">User: </label>

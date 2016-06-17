@@ -23,7 +23,7 @@
         </div>
 
         <div class="container">
-            <form:form action="${s:mvcUrl('HC#addProductPost').build()}" method="POST" commandName="product" enctype="multipart/form-data">
+            <form:form action="${s:mvcUrl('AC#addProductPost').build()}" method="POST" commandName="product" enctype="multipart/form-data">
                 <div class="form-group">
                     <label for="name">Name</label>
                     <form:input path="productName" id="name" class="form-control"/>
